@@ -12,7 +12,7 @@ def generate_launch_description():
     return LaunchDescription([
        launch.actions.DeclareLaunchArgument(
             "log_level",
-            default_value=["warn"],
+            default_value=["info"],
             description="Logging level"),
 
         Node(
