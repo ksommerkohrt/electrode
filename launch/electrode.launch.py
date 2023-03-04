@@ -28,7 +28,7 @@ def generate_launch_description():
 
     arg_vehicle = DeclareLaunchArgument(
         'vehicle',
-        default_value=['mrb3s'],
+        default_value=['mrbuggy3'],
         description='vehicle'
     )
 
