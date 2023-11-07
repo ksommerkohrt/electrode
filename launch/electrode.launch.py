@@ -16,7 +16,7 @@ def generate_launch_description():
     # launch arguments
     arg_use_sim_time = DeclareLaunchArgument(
         'use_sim_time',
-        default_value=['true'],
+        default_value=['false'],
         description='use simulation time'
     )
 
@@ -38,6 +38,7 @@ def generate_launch_description():
         executable='joy_node',
         arguments=['--ros-args', '--log-level', logger],
         parameters=[{'use_sim_time': use_sim_time}],
+        remappings=[('/joy', '/cerebri/in/joy')],
         on_exit=Shutdown()
     )
 
