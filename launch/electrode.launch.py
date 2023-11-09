@@ -32,15 +32,21 @@ def generate_launch_description():
         description='vehicle'
     )
 
-    joy_node = Node(
+    joy = Node(
         package='joy',
         output='log',
         executable='joy_node',
         arguments=['--ros-args', '--log-level', logger],
         parameters=[{'use_sim_time': use_sim_time}],
-        remappings=[('/joy', '/cerebri/in/joy')],
         on_exit=Shutdown()
     )
+
+    joy_throttle = Node(
+        package='topic_tools',
+        executable='throttle',
+        arguments=['messages', '/joy', '10', '/cerebri/in/joy'],
+        parameters=[{'use_sim_time': use_sim_time}],
+        )
 
     path = [PathJoinSubstitution([FindPackageShare('electrode'), 'config', vehicle]), '.rviz']
 
@@ -58,6 +64,7 @@ def generate_launch_description():
         arg_use_sim_time,
         arg_log_level,
         arg_vehicle,
-        joy_node,
+        joy,
+        joy_throttle,
         rviz_node
     ])
