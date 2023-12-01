@@ -1,0 +1,272 @@
+{
+  "configById": {
+    "Gauge!33y8apv": {
+      "path": "/cerebri/out/battery_state.voltage",
+      "minValue": 10.9,
+      "maxValue": 12.6,
+      "colorMap": "turbo",
+      "colorMode": "colormap",
+      "gradient": [
+        "#0000ff",
+        "#ff00ff"
+      ],
+      "reverse": false,
+      "foxglovePanelTitle": "Battery"
+    },
+    "Publish!3l6yg5a": {
+      "buttonText": "FRONT LIGHTS OFF",
+      "buttonTooltip": "",
+      "advancedView": false,
+      "value": "{\n  \"led\": [\n    {\n      \"index\": 6,\n      \"r\": 0,\n      \"g\": 0,\n      \"b\": 0\n    },\n    {\n      \"index\": 7,\n      \"r\": 0,\n      \"g\": 0,\n      \"b\": 0\n    },\n    {\n      \"index\": 8,\n      \"r\": 0,\n      \"g\": 0,\n      \"b\": 0\n    },\n    {\n      \"index\": 9,\n      \"r\": 0,\n      \"g\": 0,\n      \"b\": 0\n    },\n    {\n      \"index\": 10,\n      \"r\": 0,\n      \"g\": 0,\n      \"b\": 0\n    },\n    {\n      \"index\": 11,\n      \"r\": 0,\n      \"g\": 0,\n      \"b\": 0\n    }\n  ]\n}",
+      "topicName": "/cerebri/in/led_array",
+      "datatype": "synapse_msgs/msg/LEDArray",
+      "buttonColor": "#000000",
+      "foxglovePanelTitle": "LIGHTS"
+    },
+    "Publish!4abn8dw": {
+      "buttonText": "FRONT LIGHTS ON",
+      "buttonTooltip": "",
+      "advancedView": false,
+      "value": "{\n  \"led\": [\n    {\n      \"index\": 6,\n      \"r\": 255,\n      \"g\": 255,\n      \"b\": 255\n    },\n    {\n      \"index\": 7,\n      \"r\": 255,\n      \"g\": 255,\n      \"b\": 255\n    },\n    {\n      \"index\": 8,\n      \"r\": 255,\n      \"g\": 255,\n      \"b\": 255\n    },\n    {\n      \"index\": 9,\n      \"r\": 255,\n      \"g\": 255,\n      \"b\": 255\n    },\n    {\n      \"index\": 10,\n      \"r\": 255,\n      \"g\": 255,\n      \"b\": 255\n    },\n    {\n      \"index\": 11,\n      \"r\": 255,\n      \"g\": 255,\n      \"b\": 255\n    }\n  ]\n}",
+      "foxglovePanelTitle": "LIGHTS",
+      "topicName": "/cerebri/in/led_array",
+      "datatype": "synapse_msgs/msg/LEDArray",
+      "buttonColor": "#ffffff"
+    },
+    "Indicator!3ealhln": {
+      "path": "/cerebri/out/safety.status",
+      "style": "background",
+      "fallbackColor": "#a0a0a0",
+      "fallbackLabel": "Not Published",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#00ff00",
+          "label": "SAFETY ON"
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#ff0000",
+          "label": "SAFETY OFF"
+        }
+      ],
+      "foxglovePanelTitle": "SAFETY STATUS"
+    },
+    "Indicator!dweyid": {
+      "path": "/cerebri/out/fsm.armed",
+      "style": "background",
+      "fallbackColor": "#a0a0a0",
+      "fallbackLabel": "Not Published",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#00ff00",
+          "label": "DISARMED"
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#ff0000",
+          "label": "ARMED"
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ffff00",
+          "label": "DISARMED BATTERY CRITICAL!!!"
+        }
+      ],
+      "foxglovePanelTitle": "STATE"
+    },
+    "Indicator!9k4ufh": {
+      "path": "/cerebri/out/fsm.mode",
+      "style": "background",
+      "fallbackColor": "#000000",
+      "fallbackLabel": "Not Published",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#ffffff",
+          "label": "Select Mode"
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#00ff00",
+          "label": "Manual"
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#ff0000",
+          "label": "Auto"
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#0000ff",
+          "label": "cmd_vel"
+        },
+        {
+          "operator": "=",
+          "rawValue": "4",
+          "color": "#ffff00",
+          "label": "Calibration"
+        }
+      ],
+      "foxglovePanelTitle": "MODE"
+    },
+    "3D!18i6zy7": {
+      "layers": {
+        "845139cb-26bc-40b3-8161-8ab60af4baf5": {
+          "visible": true,
+          "frameLocked": true,
+          "label": "Grid",
+          "instanceId": "845139cb-26bc-40b3-8161-8ab60af4baf5",
+          "layerId": "foxglove.Grid",
+          "size": 10,
+          "divisions": 10,
+          "lineWidth": 1,
+          "color": "#248eff",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "order": 1
+        }
+      },
+      "cameraState": {
+        "distance": 7.547072050695048,
+        "perspective": true,
+        "phi": 47.55225188387547,
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "targetOffset": [
+          0.2793752012366158,
+          -0.27767281840930474,
+          2.3811415016689874e-16
+        ],
+        "targetOrientation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "thetaOffset": -79.55423798119129,
+        "fovy": 45,
+        "near": 0.5,
+        "far": 5000
+      },
+      "followMode": "follow-pose",
+      "scene": {},
+      "transforms": {},
+      "topics": {
+        "/slam_toolbox/scan_visualization": {
+          "visible": false
+        },
+        "/scan": {
+          "visible": true,
+          "colorField": "intensity",
+          "colorMode": "colormap",
+          "colorMap": "turbo"
+        },
+        "/robot_description": {
+          "visible": true
+        },
+        "/map": {
+          "visible": true
+        },
+        "/local_costmap/costmap": {
+          "visible": false
+        },
+        "/local_costmap/scan": {
+          "visible": false
+        },
+        "/path": {
+          "visible": true
+        },
+        "/plan": {
+          "visible": true
+        },
+        "/plan_smoothed": {
+          "visible": true
+        },
+        "/received_global_plan": {
+          "visible": true
+        },
+        "/unsmoothed_plan": {
+          "visible": true
+        },
+        "/move_base_simple/goal": {
+          "visible": false
+        }
+      },
+      "publish": {
+        "type": "point",
+        "poseTopic": "/move_base_simple/goal",
+        "pointTopic": "/goal",
+        "poseEstimateTopic": "/initialpose",
+        "poseEstimateXDeviation": 0.5,
+        "poseEstimateYDeviation": 0.5,
+        "poseEstimateThetaDeviation": 0.26179939
+      },
+      "imageMode": {}
+    }
+  },
+  "globalVariables": {
+    "": "\"\"",
+    "globalVariable": 0
+  },
+  "userNodes": {
+    "7f43e8d8-6f62-4e9e-b773-57adf07af2bb": {
+      "sourceCode": "// This example shows how to subscribe to multiple input topics.\n//\n// NOTE:\n// User Scripts can subscribe to multiple input topics, but can only publish on a single topic.\n\nimport { Input } from \"./types\";\n\ntype Output = { topic: string };\ntype GlobalVariables = { id: number };\n\n// List all the input topics in the `input` array\nexport const inputs = [\"/input/topic\", \"/input/another\"];\nexport const output = \"/studio_script/output_topic\";\n\n// Make an InputEvent type alias. Since our script will get a message from either input topic, we need to enumerate the topics.\ntype InputEvent = Input<\"/input/topic\"> | Input<\"/input/another\">;\n\nexport default function script(event: InputEvent, globalVars: GlobalVariables): Output {\n  // Remember that your script will get messages on each topic, so you\n  // need to check each event's topic to know which fields are available on the message.\n  switch (event.topic) {\n    case \"/input/topic\":\n      // topic specific input logic\n      // Our message fields are specific to our topic message\n      break;\n    case \"/input/another\":\n      // another specific logic\n      break;\n  }\n\n  // Scripts can only output one type of message regardless of the inputs\n  // Here we echo back the input topic as an example.\n  return {\n    topic: event.topic,\n  };\n};\n",
+      "name": "7f43e8d8"
+    }
+  },
+  "playbackConfig": {
+    "speed": 1
+  },
+  "layout": {
+    "first": {
+      "first": {
+        "first": {
+          "first": "Gauge!33y8apv",
+          "second": {
+            "first": "Publish!3l6yg5a",
+            "second": "Publish!4abn8dw",
+            "direction": "column"
+          },
+          "direction": "row",
+          "splitPercentage": 56.15541311675558
+        },
+        "second": {
+          "first": "Indicator!3ealhln",
+          "second": "Indicator!dweyid",
+          "direction": "row",
+          "splitPercentage": 55.92243803362591
+        },
+        "direction": "row",
+        "splitPercentage": 36.15509952289163
+      },
+      "second": "Indicator!9k4ufh",
+      "direction": "row",
+      "splitPercentage": 76.45833333333333
+    },
+    "second": "3D!18i6zy7",
+    "direction": "column",
+    "splitPercentage": 32.53629376601195
+  }
+}
