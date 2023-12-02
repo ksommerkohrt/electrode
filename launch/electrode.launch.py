@@ -80,7 +80,7 @@ def generate_launch_description():
     foxglove_websockets = IncludeLaunchDescription(
         XMLLaunchDescriptionSource([PathJoinSubstitution(
             [get_package_share_directory('foxglove_bridge'), 'launch', 'foxglove_bridge_launch.xml'])]),
-        condition=IfCondition(LaunchConfiguration('foxglove')),
+        condition=LaunchConfigurationEquals('gui', 'fg'),
         launch_arguments=[('capabilities', LaunchConfiguration('capabilities')),
                         ('use_sim_time', LaunchConfiguration('use_sim_time'))])
 
