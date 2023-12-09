@@ -1,9 +1,9 @@
 {
   "configById": {
     "Gauge!33y8apv": {
-      "path": "/cerebri/out/battery_state.voltage",
-      "minValue": 10.9,
-      "maxValue": 12.6,
+      "path": "/cerebri/out/status.fuel_percentage",
+      "minValue": 0,
+      "maxValue": 100,
       "colorMap": "turbo",
       "colorMode": "colormap",
       "gradient": [
@@ -11,10 +11,10 @@
         "#ff00ff"
       ],
       "reverse": false,
-      "foxglovePanelTitle": "Battery"
+      "foxglovePanelTitle": "Fuel"
     },
     "Indicator!3ealhln": {
-      "path": "/cerebri/out/safety.status",
+      "path": "/cerebri/out/status.safety",
       "style": "background",
       "fallbackColor": "#a0a0a0",
       "fallbackLabel": "Not Published",
@@ -35,7 +35,7 @@
       "foxglovePanelTitle": "SAFETY STATUS"
     },
     "Indicator!dweyid": {
-      "path": "/cerebri/out/fsm.armed",
+      "path": "/cerebri/out/status.arming",
       "style": "background",
       "fallbackColor": "#a0a0a0",
       "fallbackLabel": "Not Published",
@@ -62,7 +62,7 @@
       "foxglovePanelTitle": "STATE"
     },
     "Indicator!9k4ufh": {
-      "path": "/cerebri/out/fsm.mode",
+      "path": "/cerebri/out/status.mode",
       "style": "background",
       "fallbackColor": "#000000",
       "fallbackLabel": "Not Published",
@@ -344,10 +344,10 @@
       },
       "second": "Image!4a4lwcj",
       "direction": "column",
-      "splitPercentage": 16.72753834915997
+      "splitPercentage": 17.77777777777778
     },
     "second": "3D!18i6zy7",
     "direction": "row",
-    "splitPercentage": 41.365461847389554
+    "splitPercentage": 48.7027027027027
   }
 }
