@@ -24,8 +24,8 @@ ARGUMENTS = [
 
     DeclareLaunchArgument('gui',
         default_value='off',
-        choices=['rviz', 'fg', 'off'],
-        description='use rviz, foxglove (fg), or gui off'
+        choices=['rviz', 'foxglove', 'off'],
+        description='use rviz, foxglove, or gui off'
     ),
 
     DeclareLaunchArgument('joy',
@@ -80,7 +80,7 @@ def generate_launch_description():
     foxglove_websockets = IncludeLaunchDescription(
         XMLLaunchDescriptionSource([PathJoinSubstitution(
             [get_package_share_directory('foxglove_bridge'), 'launch', 'foxglove_bridge_launch.xml'])]),
-        condition=LaunchConfigurationEquals('gui', 'fg'),
+        condition=LaunchConfigurationEquals('gui', 'foxglove'),
         launch_arguments=[('capabilities', LaunchConfiguration('capabilities')),
                         ('use_sim_time', LaunchConfiguration('use_sim_time'))])
 
