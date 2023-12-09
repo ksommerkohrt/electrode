@@ -13,6 +13,14 @@
       "reverse": false,
       "foxglovePanelTitle": "Fuel"
     },
+    "RawMessages!1ydg0gi": {
+      "diffEnabled": false,
+      "diffMethod": "custom",
+      "diffTopicPath": "",
+      "showFullMessageForDiff": false,
+      "topicPath": "/cerebri/out/status.status_message",
+      "fontSize": 18
+    },
     "Indicator!3ealhln": {
       "path": "/cerebri/out/status.safety",
       "style": "background",
@@ -171,13 +179,13 @@
       },
       "cameraState": {
         "perspective": true,
-        "distance": 8.362406704348265,
-        "phi": 27.6461340929832,
-        "thetaOffset": 22.413362894165864,
+        "distance": 16.290124999930562,
+        "phi": 27.64613409298284,
+        "thetaOffset": 22.413362894166085,
         "targetOffset": [
-          -0.7370719149979329,
-          -0.3251310092178837,
-          3.668011376362979e-16
+          1.0955919275557857,
+          -0.5876288261379636,
+          4.062603843274039e-16
         ],
         "target": [
           0,
@@ -243,7 +251,7 @@
           "visible": false
         },
         "/path": {
-          "visible": true,
+          "visible": false,
           "lineWidth": 0.1,
           "type": "line",
           "gradient": [
@@ -252,7 +260,7 @@
           ]
         },
         "/plan": {
-          "visible": false
+          "visible": true
         },
         "/plan_smoothed": {
           "visible": false
@@ -331,23 +339,30 @@
     "first": {
       "first": {
         "first": {
-          "first": "Gauge!33y8apv",
+          "first": {
+            "first": "Gauge!33y8apv",
+            "second": "RawMessages!1ydg0gi",
+            "direction": "column",
+            "splitPercentage": 59.92217898832685
+          },
           "second": "Indicator!3ealhln",
-          "direction": "row"
+          "direction": "row",
+          "splitPercentage": 58.53658536585365
         },
         "second": {
           "first": "Indicator!dweyid",
           "second": "Indicator!9k4ufh",
           "direction": "row"
         },
-        "direction": "row"
+        "direction": "row",
+        "splitPercentage": 57.83972125435541
       },
       "second": "Image!4a4lwcj",
       "direction": "column",
-      "splitPercentage": 17.77777777777778
+      "splitPercentage": 28.555555555555557
     },
     "second": "3D!18i6zy7",
     "direction": "row",
-    "splitPercentage": 48.7027027027027
+    "splitPercentage": 46.54054054054054
   }
 }
