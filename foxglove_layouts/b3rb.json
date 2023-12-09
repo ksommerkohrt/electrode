@@ -100,6 +100,50 @@
       ],
       "foxglovePanelTitle": "MODE"
     },
+    "Image!4a4lwcj": {
+      "cameraState": {
+        "distance": 20,
+        "perspective": true,
+        "phi": 60,
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "targetOffset": [
+          0,
+          0,
+          0
+        ],
+        "targetOrientation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "thetaOffset": 45,
+        "fovy": 45,
+        "near": 0.5,
+        "far": 5000
+      },
+      "followMode": "follow-pose",
+      "scene": {},
+      "transforms": {},
+      "topics": {},
+      "layers": {},
+      "publish": {
+        "type": "point",
+        "poseTopic": "/move_base_simple/goal",
+        "pointTopic": "/clicked_point",
+        "poseEstimateTopic": "/initialpose",
+        "poseEstimateXDeviation": 0.5,
+        "poseEstimateYDeviation": 0.5,
+        "poseEstimateThetaDeviation": 0.26179939
+      },
+      "imageMode": {
+        "imageTopic": "/ov5645/image_raw"
+      }
+    },
     "3D!18i6zy7": {
       "layers": {
         "845139cb-26bc-40b3-8161-8ab60af4baf5": {
@@ -127,13 +171,13 @@
       },
       "cameraState": {
         "perspective": true,
-        "distance": 2.8479148269155496,
-        "phi": 27.646134092983434,
-        "thetaOffset": 22.413362894165658,
+        "distance": 8.362406704348265,
+        "phi": 27.6461340929832,
+        "thetaOffset": 22.413362894165864,
         "targetOffset": [
-          1.7826757867011644,
-          0.5500934095759547,
-          3.453996387352693e-16
+          -0.7370719149979329,
+          -0.3251310092178837,
+          3.668011376362979e-16
         ],
         "target": [
           0,
@@ -286,22 +330,24 @@
   "layout": {
     "first": {
       "first": {
-        "first": "Gauge!33y8apv",
-        "second": {
-          "first": "Indicator!3ealhln",
-          "second": "Indicator!dweyid",
-          "direction": "row",
-          "splitPercentage": 55.92243803362591
+        "first": {
+          "first": "Gauge!33y8apv",
+          "second": "Indicator!3ealhln",
+          "direction": "row"
         },
-        "direction": "row",
-        "splitPercentage": 36.15509952289163
+        "second": {
+          "first": "Indicator!dweyid",
+          "second": "Indicator!9k4ufh",
+          "direction": "row"
+        },
+        "direction": "row"
       },
-      "second": "Indicator!9k4ufh",
-      "direction": "row",
-      "splitPercentage": 76.45833333333333
+      "second": "Image!4a4lwcj",
+      "direction": "column",
+      "splitPercentage": 16.72753834915997
     },
     "second": "3D!18i6zy7",
-    "direction": "column",
-    "splitPercentage": 32.53629376601195
+    "direction": "row",
+    "splitPercentage": 41.365461847389554
   }
 }
