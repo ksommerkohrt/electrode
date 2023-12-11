@@ -68,17 +68,17 @@ def generate_launch_description():
         executable='joy_node',
         condition=IfCondition(LaunchConfiguration('joy')),
         arguments=['--ros-args', '--log-level', LaunchConfiguration('log_level')],
-        parameters=[{'use_sim_time': LaunchConfiguration('use_sim_time')}],
+        parameters=[
+            {'use_sim_time': LaunchConfiguration('use_sim_time')},
+            {'autorepeat_rate': 16.0},
+            {'coalesce_interval_ms': 90},
+            {'deadzone': 0.02},
+            ],
+        remappings=[
+            ("joy", "cerebri/in/joy"),
+        ],
         on_exit=Shutdown()
     )
-
-    joy_throttle = Node(
-        package='topic_tools',
-        executable='throttle',
-        condition=IfCondition(LaunchConfiguration('joy')),
-        arguments=['messages', '/joy', '10', '/cerebri/in/joy'],
-        parameters=[{'use_sim_time': LaunchConfiguration('use_sim_time')}],
-        )
 
     rviz_node = Node(
         package='rviz2',
@@ -105,7 +105,6 @@ def generate_launch_description():
 
     return LaunchDescription(ARGUMENTS + [
         joy,
-        joy_throttle,
         rviz_node,
         foxglove_websockets
     ])
