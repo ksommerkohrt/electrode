@@ -21,6 +21,51 @@
       "topicPath": "/cerebri/out/status.status_message",
       "fontSize": 18
     },
+    "Image!dzx5t6": {
+      "cameraState": {
+        "distance": 20,
+        "perspective": true,
+        "phi": 60,
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "targetOffset": [
+          0,
+          0,
+          0
+        ],
+        "targetOrientation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "thetaOffset": 45,
+        "fovy": 45,
+        "near": 0.5,
+        "far": 5000
+      },
+      "followMode": "follow-pose",
+      "scene": {},
+      "transforms": {},
+      "topics": {},
+      "layers": {},
+      "publish": {
+        "type": "point",
+        "poseTopic": "/move_base_simple/goal",
+        "pointTopic": "/clicked_point",
+        "poseEstimateTopic": "/initialpose",
+        "poseEstimateXDeviation": 0.5,
+        "poseEstimateYDeviation": 0.5,
+        "poseEstimateThetaDeviation": 0.26179939
+      },
+      "imageMode": {
+        "imageTopic": "/ov5645/image_raw",
+        "calibrationTopic": "/ov5645/camera_info"
+      }
+    },
     "Indicator!3ealhln": {
       "path": "/cerebri/out/status.safety",
       "style": "background",
@@ -108,50 +153,6 @@
       ],
       "foxglovePanelTitle": "MODE"
     },
-    "Image!4a4lwcj": {
-      "cameraState": {
-        "distance": 20,
-        "perspective": true,
-        "phi": 60,
-        "target": [
-          0,
-          0,
-          0
-        ],
-        "targetOffset": [
-          0,
-          0,
-          0
-        ],
-        "targetOrientation": [
-          0,
-          0,
-          0,
-          1
-        ],
-        "thetaOffset": 45,
-        "fovy": 45,
-        "near": 0.5,
-        "far": 5000
-      },
-      "followMode": "follow-pose",
-      "scene": {},
-      "transforms": {},
-      "topics": {},
-      "layers": {},
-      "publish": {
-        "type": "point",
-        "poseTopic": "/move_base_simple/goal",
-        "pointTopic": "/clicked_point",
-        "poseEstimateTopic": "/initialpose",
-        "poseEstimateXDeviation": 0.5,
-        "poseEstimateYDeviation": 0.5,
-        "poseEstimateThetaDeviation": 0.26179939
-      },
-      "imageMode": {
-        "imageTopic": "/ov5645/image_raw"
-      }
-    },
     "3D!18i6zy7": {
       "layers": {
         "845139cb-26bc-40b3-8161-8ab60af4baf5": {
@@ -179,13 +180,13 @@
       },
       "cameraState": {
         "perspective": true,
-        "distance": 16.290124999930562,
-        "phi": 27.64613409298284,
-        "thetaOffset": 22.413362894166085,
+        "distance": 2.570243131278208,
+        "phi": 91.55178143628302,
+        "thetaOffset": 165.69561051111887,
         "targetOffset": [
-          1.0955919275557857,
-          -0.5876288261379636,
-          4.062603843274039e-16
+          0.0754035516804858,
+          -0.22796640457436157,
+          4.3299604460905657e-16
         ],
         "target": [
           0,
@@ -221,7 +222,22 @@
           "visible": true
         },
         "frame:base_link": {
-          "visible": true
+          "visible": false
+        },
+        "frame:camera_link_optical": {
+          "visible": false
+        },
+        "frame:": {
+          "visible": false
+        },
+        "frame:camera_link": {
+          "visible": false
+        },
+        "frame:lidar_link": {
+          "visible": false
+        },
+        "frame:base_footprint": {
+          "visible": false
         }
       },
       "topics": {
@@ -272,7 +288,7 @@
           "visible": false
         },
         "/move_base_simple/goal": {
-          "visible": true
+          "visible": false
         },
         "/slam_toolbox/graph_visualization": {
           "visible": false
@@ -303,10 +319,21 @@
           "visible": false
         },
         "/initialpose": {
-          "visible": true
+          "visible": false
         },
         "/goal_pose_estimate": {
           "visible": false
+        },
+        "/ov5645/image_raw": {
+          "visible": true,
+          "frameLocked": true,
+          "cameraInfoTopic": "/ov5645/camera_info",
+          "distance": 1,
+          "planarProjectionFactor": 0,
+          "color": "#ffffff"
+        },
+        "/ov5645/camera_info": {
+          "visible": true
         }
       },
       "publish": {
@@ -339,30 +366,30 @@
     "first": {
       "first": {
         "first": {
-          "first": {
-            "first": "Gauge!33y8apv",
-            "second": "RawMessages!1ydg0gi",
-            "direction": "column",
-            "splitPercentage": 59.92217898832685
-          },
-          "second": "Indicator!3ealhln",
-          "direction": "row",
-          "splitPercentage": 58.53658536585365
+          "first": "Gauge!33y8apv",
+          "second": "RawMessages!1ydg0gi",
+          "direction": "column",
+          "splitPercentage": 59.92217898832685
         },
         "second": {
-          "first": "Indicator!dweyid",
-          "second": "Indicator!9k4ufh",
-          "direction": "row"
+          "first": "Image!dzx5t6",
+          "second": "Indicator!3ealhln",
+          "direction": "row",
+          "splitPercentage": 54.47790252324396
         },
         "direction": "row",
-        "splitPercentage": 57.83972125435541
+        "splitPercentage": 34.37001016112642
       },
-      "second": "Image!4a4lwcj",
-      "direction": "column",
-      "splitPercentage": 28.555555555555557
+      "second": {
+        "first": "Indicator!dweyid",
+        "second": "Indicator!9k4ufh",
+        "direction": "row"
+      },
+      "direction": "row",
+      "splitPercentage": 57.83972125435541
     },
     "second": "3D!18i6zy7",
-    "direction": "row",
-    "splitPercentage": 46.54054054054054
+    "direction": "column",
+    "splitPercentage": 19.71153846153846
   }
 }
