@@ -43,6 +43,21 @@ ARGUMENTS = [
         default_value=['b3rb'],
         description='vehicle'
     ),
+
+    DeclareLaunchArgument('topic_whitelist',
+        default_value=['["/ov5645/image_raw","/ov5645/camera_info","/cerebri/out/status","/global_costmap/costmap","/map","global_costmap/published_footprint","/plan","/robot_description","/tf"]'],
+        description='topic_whitelist for foxglove'
+    ),
+
+    DeclareLaunchArgument('service_whitelist',
+        default_value=['[""]'],
+        description='service_whitelist for foxglove'
+    ),
+
+    DeclareLaunchArgument('param_whitelist',
+        default_value=['[""]'],
+        description='param_whitelist for foxglove'
+    ),
 ]
 
 def generate_launch_description():
@@ -82,6 +97,9 @@ def generate_launch_description():
             [get_package_share_directory('foxglove_bridge'), 'launch', 'foxglove_bridge_launch.xml'])]),
         condition=LaunchConfigurationEquals('gui', 'foxglove'),
         launch_arguments=[('capabilities', LaunchConfiguration('capabilities')),
+                        ('topic_whitelist', LaunchConfiguration('topic_whitelist')),
+                        ('service_whitelist', LaunchConfiguration('service_whitelist')),
+                        ('param_whitelist', LaunchConfiguration('param_whitelist')),
                         ('use_sim_time', LaunchConfiguration('use_sim_time'))])
 
 
