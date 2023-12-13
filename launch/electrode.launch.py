@@ -70,8 +70,8 @@ def generate_launch_description():
         arguments=['--ros-args', '--log-level', LaunchConfiguration('log_level')],
         parameters=[
             {'use_sim_time': LaunchConfiguration('use_sim_time')},
-            {'autorepeat_rate': 16.0},
-            {'coalesce_interval_ms': 90},
+            {'coalesce_interval_ms': 50},
+            {'autorepeat_rate': 20.0},
             {'deadzone': 0.02},
             ],
         remappings=[
