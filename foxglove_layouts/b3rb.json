@@ -4,7 +4,7 @@
       "path": "/cerebri/out/status.fuel_percentage",
       "minValue": 0,
       "maxValue": 100,
-      "colorMap": "turbo",
+      "colorMap": "red-yellow-green",
       "colorMode": "colormap",
       "gradient": [
         "#0000ff",
@@ -12,6 +12,33 @@
       ],
       "reverse": false,
       "foxglovePanelTitle": "Fuel"
+    },
+    "Indicator!13bh3kr": {
+      "path": "/cerebri/out/status.fuel",
+      "style": "background",
+      "fallbackColor": "#a0a0a0",
+      "fallbackLabel": "Unknown",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ff0000",
+          "label": "Critical Fuel"
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#fff000",
+          "label": "Low Fuel"
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#00ff00",
+          "label": "Nominal Fuel"
+        }
+      ],
+      "foxglovePanelTitle": "Fuel Status"
     },
     "RawMessages!1ydg0gi": {
       "diffEnabled": false,
@@ -180,13 +207,13 @@
       },
       "cameraState": {
         "perspective": true,
-        "distance": 2.4417309747139635,
-        "phi": 47.70562759012963,
-        "thetaOffset": 86.31099512650611,
+        "distance": 4.292775278807117,
+        "phi": 46.09002269625035,
+        "thetaOffset": 88.27333982580048,
         "targetOffset": [
-          0.25445882214215204,
-          -0.08731916817813853,
-          4.3120026716995646e-16
+          1.0998201845920448,
+          0.218710845497425,
+          7.521939246189554e-17
         ],
         "target": [
           0,
@@ -366,10 +393,15 @@
     "first": {
       "first": {
         "first": {
-          "first": "Gauge!33y8apv",
+          "first": {
+            "first": "Gauge!33y8apv",
+            "second": "Indicator!13bh3kr",
+            "direction": "column",
+            "splitPercentage": 61.382113821138205
+          },
           "second": "RawMessages!1ydg0gi",
           "direction": "column",
-          "splitPercentage": 59.92217898832685
+          "splitPercentage": 72.02702702702702
         },
         "second": {
           "first": "Image!dzx5t6",
@@ -390,6 +422,6 @@
     },
     "second": "3D!18i6zy7",
     "direction": "column",
-    "splitPercentage": 19.71153846153846
+    "splitPercentage": 38.46153846153847
   }
 }
