@@ -4,7 +4,7 @@
       "path": "/cerebri/out/status.fuel_percentage",
       "minValue": 0,
       "maxValue": 100,
-      "colorMap": "red-yellow-green",
+      "colorMap": "turbo",
       "colorMode": "colormap",
       "gradient": [
         "#0000ff",
@@ -12,33 +12,6 @@
       ],
       "reverse": false,
       "foxglovePanelTitle": "Fuel"
-    },
-    "Indicator!13bh3kr": {
-      "path": "/cerebri/out/status.fuel",
-      "style": "background",
-      "fallbackColor": "#a0a0a0",
-      "fallbackLabel": "Unknown",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "1",
-          "color": "#ff0000",
-          "label": "Critical Fuel"
-        },
-        {
-          "operator": "=",
-          "rawValue": "2",
-          "color": "#fff000",
-          "label": "Low Fuel"
-        },
-        {
-          "operator": "=",
-          "rawValue": "3",
-          "color": "#00ff00",
-          "label": "Nominal Fuel"
-        }
-      ],
-      "foxglovePanelTitle": "Fuel Status"
     },
     "RawMessages!1ydg0gi": {
       "diffEnabled": false,
@@ -89,8 +62,8 @@
         "poseEstimateThetaDeviation": 0.26179939
       },
       "imageMode": {
-        "imageTopic": "/ov5645/image_raw",
-        "calibrationTopic": "/ov5645/camera_info"
+        "imageTopic": "/camera/image_raw/compressed",
+        "calibrationTopic": "/camera/camera_info"
       }
     },
     "Indicator!3ealhln": {
@@ -207,13 +180,13 @@
       },
       "cameraState": {
         "perspective": true,
-        "distance": 4.292775278807117,
-        "phi": 46.09002269625035,
-        "thetaOffset": 88.27333982580048,
+        "distance": 3.1555842957345184,
+        "phi": 50.474858359359764,
+        "thetaOffset": -46.61208179657046,
         "targetOffset": [
-          1.0998201845920448,
-          0.218710845497425,
-          7.521939246189554e-17
+          -0.23531930636136072,
+          0.1771858904189439,
+          4.263630779559438e-16
         ],
         "target": [
           0,
@@ -361,6 +334,13 @@
         },
         "/ov5645/camera_info": {
           "visible": true
+        },
+        "/camera/image_raw/compressed": {
+          "visible": true,
+          "cameraInfoTopic": "/camera/camera_info"
+        },
+        "/camera/camera_info": {
+          "visible": true
         }
       },
       "publish": {
@@ -393,15 +373,10 @@
     "first": {
       "first": {
         "first": {
-          "first": {
-            "first": "Gauge!33y8apv",
-            "second": "Indicator!13bh3kr",
-            "direction": "column",
-            "splitPercentage": 61.382113821138205
-          },
+          "first": "Gauge!33y8apv",
           "second": "RawMessages!1ydg0gi",
           "direction": "column",
-          "splitPercentage": 72.02702702702702
+          "splitPercentage": 59.92217898832685
         },
         "second": {
           "first": "Image!dzx5t6",
@@ -422,6 +397,6 @@
     },
     "second": "3D!18i6zy7",
     "direction": "column",
-    "splitPercentage": 38.46153846153847
+    "splitPercentage": 19.71153846153846
   }
 }
