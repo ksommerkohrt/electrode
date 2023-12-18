@@ -1,161 +1,7 @@
 {
   "configById": {
-    "congipilot-joystick.CogniPilot Joystick!34of36j": {
-      "topic": "/cerebri/in/joy",
-      "publishRate": 5
-    },
-    "Gauge!33y8apv": {
-      "path": "/cerebri/out/status.fuel_percentage",
-      "minValue": 0,
-      "maxValue": 100,
-      "colorMap": "turbo",
-      "colorMode": "colormap",
-      "gradient": [
-        "#0000ff",
-        "#ff00ff"
-      ],
-      "reverse": false,
-      "foxglovePanelTitle": "Fuel"
-    },
-    "RawMessages!1ydg0gi": {
-      "diffEnabled": false,
-      "diffMethod": "custom",
-      "diffTopicPath": "",
-      "showFullMessageForDiff": false,
-      "topicPath": "/cerebri/out/status.status_message",
-      "fontSize": 18
-    },
-    "Image!dzx5t6": {
-      "cameraState": {
-        "distance": 20,
-        "perspective": true,
-        "phi": 60,
-        "target": [
-          0,
-          0,
-          0
-        ],
-        "targetOffset": [
-          0,
-          0,
-          0
-        ],
-        "targetOrientation": [
-          0,
-          0,
-          0,
-          1
-        ],
-        "thetaOffset": 45,
-        "fovy": 45,
-        "near": 0.5,
-        "far": 5000
-      },
-      "followMode": "follow-pose",
-      "scene": {},
-      "transforms": {},
-      "topics": {},
-      "layers": {},
-      "publish": {
-        "type": "point",
-        "poseTopic": "/move_base_simple/goal",
-        "pointTopic": "/clicked_point",
-        "poseEstimateTopic": "/initialpose",
-        "poseEstimateXDeviation": 0.5,
-        "poseEstimateYDeviation": 0.5,
-        "poseEstimateThetaDeviation": 0.26179939
-      },
-      "imageMode": {
-        "imageTopic": "/camera/image_raw/compressed",
-        "calibrationTopic": "/camera/camera_info"
-      }
-    },
-    "Indicator!3ealhln": {
-      "path": "/cerebri/out/status.safety",
-      "style": "background",
-      "fallbackColor": "#a0a0a0",
-      "fallbackLabel": "Not Published",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "1",
-          "color": "#00ff00",
-          "label": "SAFETY ON"
-        },
-        {
-          "operator": "=",
-          "rawValue": "2",
-          "color": "#ff0000",
-          "label": "SAFETY OFF"
-        }
-      ],
-      "foxglovePanelTitle": "SAFETY STATUS"
-    },
-    "Indicator!dweyid": {
-      "path": "/cerebri/out/status.arming",
-      "style": "background",
-      "fallbackColor": "#a0a0a0",
-      "fallbackLabel": "Not Published",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "1",
-          "color": "#00ff00",
-          "label": "DISARMED"
-        },
-        {
-          "operator": "=",
-          "rawValue": "2",
-          "color": "#ff0000",
-          "label": "ARMED"
-        },
-        {
-          "operator": "=",
-          "rawValue": "3",
-          "color": "#ffff00",
-          "label": "DISARMED BATTERY CRITICAL!!!"
-        }
-      ],
-      "foxglovePanelTitle": "STATE"
-    },
-    "Indicator!9k4ufh": {
-      "path": "/cerebri/out/status.mode",
-      "style": "background",
-      "fallbackColor": "#000000",
-      "fallbackLabel": "Not Published",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "0",
-          "color": "#ffffff",
-          "label": "Select Mode"
-        },
-        {
-          "operator": "=",
-          "rawValue": "1",
-          "color": "#00ff00",
-          "label": "Manual"
-        },
-        {
-          "operator": "=",
-          "rawValue": "2",
-          "color": "#ff0000",
-          "label": "Auto"
-        },
-        {
-          "operator": "=",
-          "rawValue": "3",
-          "color": "#0000ff",
-          "label": "cmd_vel"
-        },
-        {
-          "operator": "=",
-          "rawValue": "4",
-          "color": "#ffff00",
-          "label": "Calibration"
-        }
-      ],
-      "foxglovePanelTitle": "MODE"
+    "congipilot-joystick.CogniPilot Joystick!3i8jpy6": {
+      "topic": "/cerebri/in/joy"
     },
     "3D!18i6zy7": {
       "layers": {
@@ -184,13 +30,13 @@
       },
       "cameraState": {
         "perspective": true,
-        "distance": 4.518710819804785,
-        "phi": 67.30913314829856,
-        "thetaOffset": -40.67205704137751,
+        "distance": 3.1555842957345184,
+        "phi": 50.474858359359764,
+        "thetaOffset": -46.61208179657046,
         "targetOffset": [
-          0.5054852483344532,
-          -0.8264395223484742,
-          2.0543285083735545e-15
+          -0.23531930636136072,
+          0.1771858904189439,
+          4.263630779559438e-16
         ],
         "target": [
           0,
@@ -358,6 +204,187 @@
       },
       "imageMode": {},
       "followTf": "map"
+    },
+    "Image!dzx5t6": {
+      "cameraState": {
+        "distance": 20,
+        "perspective": true,
+        "phi": 60,
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "targetOffset": [
+          0,
+          0,
+          0
+        ],
+        "targetOrientation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "thetaOffset": 45,
+        "fovy": 45,
+        "near": 0.5,
+        "far": 5000
+      },
+      "followMode": "follow-pose",
+      "scene": {},
+      "transforms": {},
+      "topics": {},
+      "layers": {},
+      "publish": {
+        "type": "point",
+        "poseTopic": "/move_base_simple/goal",
+        "pointTopic": "/clicked_point",
+        "poseEstimateTopic": "/initialpose",
+        "poseEstimateXDeviation": 0.5,
+        "poseEstimateYDeviation": 0.5,
+        "poseEstimateThetaDeviation": 0.26179939
+      },
+      "imageMode": {
+        "imageTopic": "/camera/image_raw/compressed",
+        "calibrationTopic": "/camera/camera_info"
+      },
+      "foxglovePanelTitle": "Camera"
+    },
+    "RawMessages!1ydg0gi": {
+      "diffEnabled": false,
+      "diffMethod": "custom",
+      "diffTopicPath": "",
+      "showFullMessageForDiff": false,
+      "topicPath": "/cerebri/out/status.status_message",
+      "fontSize": 18
+    },
+    "Gauge!33y8apv": {
+      "path": "/cerebri/out/status.fuel_percentage",
+      "minValue": 0,
+      "maxValue": 100,
+      "colorMap": "turbo",
+      "colorMode": "gradient",
+      "gradient": [
+        "#ffff00fa",
+        "#00ff00ff"
+      ],
+      "reverse": false,
+      "foxglovePanelTitle": "Fuel"
+    },
+    "Indicator!1iukamu": {
+      "path": "/cerebri/out/status.fuel",
+      "style": "background",
+      "fallbackColor": "#a0a0a0",
+      "fallbackLabel": "Unknown",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffff00",
+          "label": "Critical"
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#c7ff00",
+          "label": "Low"
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#00ff00",
+          "label": "Nominal"
+        }
+      ],
+      "foxglovePanelTitle": "Fuel Status"
+    },
+    "Indicator!3ealhln": {
+      "path": "/cerebri/out/status.safety",
+      "style": "background",
+      "fallbackColor": "#a0a0a0",
+      "fallbackLabel": "Not Published",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#00ff00",
+          "label": "SAFETY ON"
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#ff0000",
+          "label": "SAFETY OFF"
+        }
+      ],
+      "foxglovePanelTitle": "SAFETY STATUS"
+    },
+    "Indicator!dweyid": {
+      "path": "/cerebri/out/status.arming",
+      "style": "background",
+      "fallbackColor": "#a0a0a0",
+      "fallbackLabel": "Not Published",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#00ff00",
+          "label": "DISARMED"
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#ff0000",
+          "label": "ARMED"
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ffff00",
+          "label": "DISARMED BATTERY CRITICAL!!!"
+        }
+      ],
+      "foxglovePanelTitle": "STATE"
+    },
+    "Indicator!9k4ufh": {
+      "path": "/cerebri/out/status.mode",
+      "style": "background",
+      "fallbackColor": "#000000",
+      "fallbackLabel": "Not Published",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#ffffff",
+          "label": "Select Mode"
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#00ff00",
+          "label": "Manual"
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#ff0000",
+          "label": "Auto"
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#0000ff",
+          "label": "cmd_vel"
+        },
+        {
+          "operator": "=",
+          "rawValue": "4",
+          "color": "#ffff00",
+          "label": "Calibration"
+        }
+      ],
+      "foxglovePanelTitle": "MODE"
     }
   },
   "globalVariables": {
@@ -374,38 +401,44 @@
     "speed": 1
   },
   "layout": {
-    "direction": "row",
-    "first": "congipilot-joystick.CogniPilot Joystick!34of36j",
+    "first": "congipilot-joystick.CogniPilot Joystick!3i8jpy6",
     "second": {
-      "first": {
+      "first": "3D!18i6zy7",
+      "second": {
         "first": {
           "first": {
-            "first": "Gauge!33y8apv",
-            "second": "RawMessages!1ydg0gi",
+            "first": {
+              "first": {
+                "first": "Image!dzx5t6",
+                "second": "RawMessages!1ydg0gi",
+                "direction": "column",
+                "splitPercentage": 62.74131274131274
+              },
+              "second": "Gauge!33y8apv",
+              "direction": "column",
+              "splitPercentage": 78.0416453319679
+            },
+            "second": "Indicator!1iukamu",
             "direction": "column",
-            "splitPercentage": 59.92217898832685
+            "splitPercentage": 84.69945355191257
           },
-          "second": {
-            "first": "Image!dzx5t6",
-            "second": "Indicator!3ealhln",
-            "direction": "row",
-            "splitPercentage": 54.47790252324396
-          },
-          "direction": "row",
-          "splitPercentage": 34.37001016112642
+          "second": "Indicator!3ealhln",
+          "direction": "column",
+          "splitPercentage": 86.81214421252372
         },
         "second": {
           "first": "Indicator!dweyid",
           "second": "Indicator!9k4ufh",
-          "direction": "row"
+          "direction": "column",
+          "splitPercentage": 52.38095238095236
         },
-        "direction": "row",
-        "splitPercentage": 57.83972125435541
+        "direction": "column",
+        "splitPercentage": 76.99050401753105
       },
-      "second": "3D!18i6zy7",
-      "direction": "column",
-      "splitPercentage": 23.66691015339664
+      "direction": "row",
+      "splitPercentage": 78.08683683683684
     },
-    "splitPercentage": 19.305856832971802
+    "direction": "row",
+    "splitPercentage": 19.759036144578314
   }
 }
