@@ -1,5 +1,9 @@
 {
   "configById": {
+    "congipilot-joystick.CogniPilot Joystick!34of36j": {
+      "topic": "/cerebri/in/joy",
+      "publishRate": 5
+    },
     "Gauge!33y8apv": {
       "path": "/cerebri/out/status.fuel_percentage",
       "minValue": 0,
@@ -180,13 +184,13 @@
       },
       "cameraState": {
         "perspective": true,
-        "distance": 3.1555842957345184,
-        "phi": 50.474858359359764,
-        "thetaOffset": -46.61208179657046,
+        "distance": 4.518710819804785,
+        "phi": 67.30913314829856,
+        "thetaOffset": -40.67205704137751,
         "targetOffset": [
-          -0.23531930636136072,
-          0.1771858904189439,
-          4.263630779559438e-16
+          0.5054852483344532,
+          -0.8264395223484742,
+          2.0543285083735545e-15
         ],
         "target": [
           0,
@@ -370,33 +374,38 @@
     "speed": 1
   },
   "layout": {
-    "first": {
+    "direction": "row",
+    "first": "congipilot-joystick.CogniPilot Joystick!34of36j",
+    "second": {
       "first": {
         "first": {
-          "first": "Gauge!33y8apv",
-          "second": "RawMessages!1ydg0gi",
-          "direction": "column",
-          "splitPercentage": 59.92217898832685
+          "first": {
+            "first": "Gauge!33y8apv",
+            "second": "RawMessages!1ydg0gi",
+            "direction": "column",
+            "splitPercentage": 59.92217898832685
+          },
+          "second": {
+            "first": "Image!dzx5t6",
+            "second": "Indicator!3ealhln",
+            "direction": "row",
+            "splitPercentage": 54.47790252324396
+          },
+          "direction": "row",
+          "splitPercentage": 34.37001016112642
         },
         "second": {
-          "first": "Image!dzx5t6",
-          "second": "Indicator!3ealhln",
-          "direction": "row",
-          "splitPercentage": 54.47790252324396
+          "first": "Indicator!dweyid",
+          "second": "Indicator!9k4ufh",
+          "direction": "row"
         },
         "direction": "row",
-        "splitPercentage": 34.37001016112642
+        "splitPercentage": 57.83972125435541
       },
-      "second": {
-        "first": "Indicator!dweyid",
-        "second": "Indicator!9k4ufh",
-        "direction": "row"
-      },
-      "direction": "row",
-      "splitPercentage": 57.83972125435541
+      "second": "3D!18i6zy7",
+      "direction": "column",
+      "splitPercentage": 23.66691015339664
     },
-    "second": "3D!18i6zy7",
-    "direction": "column",
-    "splitPercentage": 19.71153846153846
+    "splitPercentage": 19.305856832971802
   }
 }
