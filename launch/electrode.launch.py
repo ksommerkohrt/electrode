@@ -1,6 +1,6 @@
 from launch import LaunchDescription
-from launch.substitutions import LaunchConfiguration, PathJoinSubstitution, TextSubstitution
-from launch.actions import DeclareLaunchArgument, Shutdown, LogInfo, IncludeLaunchDescription
+from launch.substitutions import LaunchConfiguration, PathJoinSubstitution, TextSubstitution, NotSubstitution, AndSubstitution, OrSubstitution
+from launch.actions import DeclareLaunchArgument, Shutdown, LogInfo, IncludeLaunchDescription, ExecuteProcess
 from launch.conditions import LaunchConfigurationEquals, IfCondition, UnlessCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_xml.launch_description_sources import XMLLaunchDescriptionSource
@@ -12,9 +12,9 @@ from ament_index_python.packages import get_package_share_directory
 ARGUMENTS = [
 
     # launch arguments
-    DeclareLaunchArgument('use_sim_time',
+    DeclareLaunchArgument('sim',
         default_value=['false'],
-        description='use simulation time'
+        description='use with simulation'
     ),
 
     DeclareLaunchArgument('capabilities',
@@ -22,14 +22,20 @@ ARGUMENTS = [
         description='capabilities for foxglove'
     ),
 
-    DeclareLaunchArgument('gui',
-        default_value='off',
-        choices=['rviz', 'foxglove', 'off'],
-        description='use rviz, foxglove, or gui off'
+    DeclareLaunchArgument('rviz2',
+        default_value='false',
+        choices=['true', 'false'],
+        description='use rviz2 for gui.'
+    ),
+
+    DeclareLaunchArgument('foxglove',
+        default_value='true',
+        choices=['true', 'false'],
+        description='use foxglove for gui.'
     ),
 
     DeclareLaunchArgument('joy',
-        default_value='true',
+        default_value='false',
         choices=['true', 'false'],
         description='use joystick'
     ),
@@ -57,7 +63,7 @@ ARGUMENTS = [
     DeclareLaunchArgument('param_whitelist',
         default_value=['[""]'],
         description='param_whitelist for foxglove'
-    ),
+    )
 ]
 
 def generate_launch_description():
@@ -66,10 +72,10 @@ def generate_launch_description():
         package='joy',
         output='log',
         executable='joy_node',
-        condition=IfCondition(LaunchConfiguration('joy')),
+        condition=IfCondition(OrSubstitution(LaunchConfiguration('joy'),LaunchConfiguration('rviz2'))),
         arguments=['--ros-args', '--log-level', LaunchConfiguration('log_level')],
         parameters=[
-            {'use_sim_time': LaunchConfiguration('use_sim_time')},
+            {'use_sim_time': LaunchConfiguration('sim')},
             {'coalesce_interval_ms': 50},
             {'autorepeat_rate': 20.0},
             {'deadzone': 0.02},
@@ -83,28 +89,40 @@ def generate_launch_description():
     rviz_node = Node(
         package='rviz2',
         executable='rviz2',
-        condition=LaunchConfigurationEquals('gui', 'rviz'),
+        condition=IfCondition(LaunchConfiguration('rviz2')),
         arguments=[
             '-d', [PathJoinSubstitution([FindPackageShare('electrode'), 'config',
             LaunchConfiguration('vehicle')]), '.rviz'], '--ros-args', '--log-level',
             LaunchConfiguration('log_level')],
-        parameters=[{'use_sim_time': LaunchConfiguration('use_sim_time')}],
+        parameters=[{'use_sim_time': LaunchConfiguration('sim')}],
         on_exit=Shutdown(),
     )
+
 
     foxglove_websockets = IncludeLaunchDescription(
         XMLLaunchDescriptionSource([PathJoinSubstitution(
             [get_package_share_directory('foxglove_bridge'), 'launch', 'foxglove_bridge_launch.xml'])]),
-        condition=LaunchConfigurationEquals('gui', 'foxglove'),
+        condition=IfCondition(AndSubstitution(AndSubstitution(LaunchConfiguration('foxglove'),LaunchConfiguration('sim')),NotSubstitution(LaunchConfiguration('rviz2')))),
         launch_arguments=[('capabilities', LaunchConfiguration('capabilities')),
                         ('topic_whitelist', LaunchConfiguration('topic_whitelist')),
                         ('service_whitelist', LaunchConfiguration('service_whitelist')),
                         ('param_whitelist', LaunchConfiguration('param_whitelist')),
-                        ('use_sim_time', LaunchConfiguration('use_sim_time'))])
+                        ('use_sim_time', LaunchConfiguration('sim'))])
+
+    foxglove_studio = ExecuteProcess(
+            cmd = [f"foxglove-studio"],
+            name='foxglove-studio',
+            condition=IfCondition(AndSubstitution(LaunchConfiguration('foxglove'),NotSubstitution(LaunchConfiguration('rviz2')))),
+            output='log',
+            sigterm_timeout='1',
+            sigkill_timeout='1',
+            on_exit=Shutdown()
+            )
 
 
     return LaunchDescription(ARGUMENTS + [
         joy,
         rviz_node,
-        foxglove_websockets
+        foxglove_websockets,
+        foxglove_studio
     ])
