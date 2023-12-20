@@ -275,8 +275,8 @@
     "Indicator!1iukamu": {
       "path": "/cerebri/out/status.fuel",
       "style": "background",
-      "fallbackColor": "#a0a0a0",
-      "fallbackLabel": "Unknown",
+      "fallbackColor": "#171717",
+      "fallbackLabel": "Waiting",
       "rules": [
         {
           "operator": "=",
@@ -302,8 +302,8 @@
     "Indicator!3ealhln": {
       "path": "/cerebri/out/status.safety",
       "style": "background",
-      "fallbackColor": "#a0a0a0",
-      "fallbackLabel": "Not Published",
+      "fallbackColor": "#171717",
+      "fallbackLabel": "Waiting",
       "rules": [
         {
           "operator": "=",
@@ -323,8 +323,8 @@
     "Indicator!dweyid": {
       "path": "/cerebri/out/status.arming",
       "style": "background",
-      "fallbackColor": "#a0a0a0",
-      "fallbackLabel": "Not Published",
+      "fallbackColor": "#171717",
+      "fallbackLabel": "Waiting",
       "rules": [
         {
           "operator": "=",
@@ -350,8 +350,8 @@
     "Indicator!9k4ufh": {
       "path": "/cerebri/out/status.mode",
       "style": "background",
-      "fallbackColor": "#000000",
-      "fallbackLabel": "Not Published",
+      "fallbackColor": "#171717",
+      "fallbackLabel": "Waiting",
       "rules": [
         {
           "operator": "=",
